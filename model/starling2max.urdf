@@ -40,7 +40,7 @@
             </geometry>
         </visual>
     </link>
-    <joint name="prop0_joint">
+    <joint name="prop0_joint" type="fixed">
         <parent link="base_link"/>
         <child link="prop0_link"/>
     </joint>
@@ -58,7 +58,7 @@
             </geometry>
         </visual>
     </link>
-    <joint name="prop1_joint">
+    <joint name="prop1_joint" type="fixed">
         <parent link="base_link"/>
         <child link="prop1_link"/>
     </joint>
@@ -76,7 +76,7 @@
             </geometry>
         </visual>
     </link>
-    <joint name="prop2_joint">
+    <joint name="prop2_joint" type="fixed">
         <parent link="base_link"/>
         <child link="prop2_link"/>
     </joint>
@@ -94,7 +94,7 @@
             </geometry>
         </visual>
     </link>
-    <joint name="prop3_joint">
+    <joint name="prop3_joint" type="fixed">
         <parent link="base_link"/>
         <child link="prop3_link"/>
     </joint>
