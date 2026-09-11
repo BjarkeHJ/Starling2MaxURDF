@@ -40,9 +40,10 @@
             </geometry>
         </visual>
     </link>
-    <joint name="prop0_joint" type="fixed">
+    <joint name="prop0_joint" type="continuous">
         <parent link="base_link"/>
         <child link="prop0_link"/>
+        <axis xyz="0 0 1"/>
     </joint>
 
     <link name="prop1_link">
@@ -58,9 +59,10 @@
             </geometry>
         </visual>
     </link>
-    <joint name="prop1_joint" type="fixed">
+    <joint name="prop1_joint" type="continuous">
         <parent link="base_link"/>
         <child link="prop1_link"/>
+        <axis xyz="0 0 1"/>
     </joint>
 
     <link name="prop2_link">
@@ -76,9 +78,10 @@
             </geometry>
         </visual>
     </link>
-    <joint name="prop2_joint" type="fixed">
+    <joint name="prop2_joint" type="continuous">
         <parent link="base_link"/>
         <child link="prop2_link"/>
+        <axis xyz="0 0 1"/>
     </joint>
 
     <link name="prop3_link">
@@ -94,9 +97,10 @@
             </geometry>
         </visual>
     </link>
-    <joint name="prop3_joint" type="fixed">
+    <joint name="prop3_joint" type="continuous">
         <parent link="base_link"/>
         <child link="prop3_link"/>
+        <axis xyz="0 0 1"/>
     </joint>
 
 </robot>
