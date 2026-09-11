@@ -3,8 +3,8 @@
 <robot name="starling2max">
 
     <properties
-        kf="3.16e-10"
-        km="7.94e-12"
+        kf="6.057019757794185e-09"
+        km="9.9e-09"
     />
 
     <link name="base_link">
