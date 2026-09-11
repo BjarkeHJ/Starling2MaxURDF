@@ -9,12 +9,12 @@
 
     <link name="base_link">
         <inertial>
-            <origin rpy="0.0 90.0 0.0" xyz="0.0 0.0 0.0"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <mass value="0.566"/>
             <inertia ixx="0.004669971666666667" ixy="0" ixz="0" iyy="0.003005931666666666" iyz="0" izz="0.0061061023333333336"/>
         </inertial>
         <visual>
-            <origin rpy="0.0 90.0 0.0" xyz="0.0 0.0 0.0"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
                 <mesh filename="./Starling2Max.obj" scale="0.001 0.001 0.001"/>
             </geometry>
