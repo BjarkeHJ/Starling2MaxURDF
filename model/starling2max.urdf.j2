@@ -1,0 +1,102 @@
+<?xml version="1.0" ?>
+
+<robot name="starling2max">
+
+    <properties
+        kf="3.16e-10"
+        km="7.94e-12"
+    />
+
+    <link name="base_link">
+        <inertial>
+            <origin rpy="0.0 90.0 0.0" xyz="0.0 0.0 0.0"/>
+            <mass value="{{ mass }}"/>
+            <inertia ixx="{{ ixx }}" ixy="0" ixz="0" iyy="{{ iyy }}" iyz="0" izz="{{ izz }}"/>
+        </inertial>
+        <visual>
+            <origin rpy="0.0 90.0 0.0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="./Starling2Max.obj" scale="{{ scale_x }} {{ scale_y }} {{ scale_z }}"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="{{ size_x }} {{ size_y }} {{ size_z }}"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="prop0_link">
+        <inertial>
+            <origin rpy="90.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+        <visual>
+            <origin rpy="90.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="./Starling2Max7040Prop.obj" scale="1.0 1.0 1.0"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="prop0_joint">
+        <parent link="base_link"/>
+        <child link="prop0_link"/>
+    </joint>
+
+    <link name="prop1_link">
+        <inertial>
+            <origin rpy="90.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+        <visual>
+            <origin rpy="90.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="./Starling2Max7040Prop.obj" scale="1.0 1.0 1.0"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="prop1_joint">
+        <parent link="base_link"/>
+        <child link="prop1_link"/>
+    </joint>
+
+    <link name="prop2_link">
+        <inertial>
+            <origin rpy="90.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+        <visual>
+            <origin rpy="90.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="./Starling2Max7040Prop.obj" scale="1.0 1.0 1.0"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="prop2_joint">
+        <parent link="base_link"/>
+        <child link="prop2_link"/>
+    </joint>
+
+    <link name="prop3_link">
+        <inertial>
+            <origin rpy="90.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+        <visual>
+            <origin rpy="90.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="./Starling2Max7040Prop.obj" scale="1.0 1.0 1.0"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="prop3_joint">
+        <parent link="base_link"/>
+        <child link="prop3_link"/>
+    </joint>
+
+</robot>
