@@ -12,6 +12,11 @@ SIZE_X = 217 * MM_TO_M
 SIZE_Y = 287 * MM_TO_M
 SIZE_Z = 129 * MM_TO_M
 
+PROP0 = [94.96*MM_TO_M, 129.91*MM_TO_M, 24.06*MM_TO_M] 
+PROP1 = [94.96*MM_TO_M, 129.91*MM_TO_M, 24.06*MM_TO_M] 
+PROP2 = [94.96*MM_TO_M, 129.91*MM_TO_M, 24.06*MM_TO_M] 
+PROP3 = [94.96*MM_TO_M, 129.91*MM_TO_M, 24.06*MM_TO_M] 
+
 def box_inertia(mass: float, size_x: float, size_y: float, size_z: float) -> tuple[float, float, float]:
     ixx = mass / 12.0 * (size_y**2 + size_z**2)
     iyy = mass / 12.0 * (size_x**2 + size_z**2)
@@ -38,7 +43,11 @@ def generate(mass: float) -> str:
         size_z=SIZE_Z,
         scale_x=MM_TO_M,
         scale_y=MM_TO_M,
-        scale_z=MM_TO_M
+        scale_z=MM_TO_M,
+        prop0=PROP0,
+        prop1=PROP1,
+        prop2=PROP2,
+        prop3=PROP3,
     )
 
     with open(os.path.join(SCRIPT_DIR, "starling2max.urdf"), "w") as f:
