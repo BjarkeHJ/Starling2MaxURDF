@@ -36,11 +36,11 @@
         <visual>
             <origin rpy="90.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="./Starling2Max7040Prop.obj" scale="1.0 1.0 1.0"/>
+                <mesh filename="./Starling2Max7040Prop.obj" scale="0.001 0.001 0.001"/>
             </geometry>
         </visual>
     </link>
-    <joint name="prop0_joint" type="fixed">
+    <joint name="prop0_joint">
         <parent link="base_link"/>
         <child link="prop0_link"/>
     </joint>
@@ -54,11 +54,11 @@
         <visual>
             <origin rpy="90.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="./Starling2Max7040Prop.obj" scale="1.0 1.0 1.0"/>
+                <mesh filename="./Starling2Max7040Prop.obj" scale="0.001 0.001 0.001"/>
             </geometry>
         </visual>
     </link>
-    <joint name="prop1_joint" type="fixed">
+    <joint name="prop1_joint">
         <parent link="base_link"/>
         <child link="prop1_link"/>
     </joint>
@@ -72,11 +72,11 @@
         <visual>
             <origin rpy="90.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="./Starling2Max7040Prop.obj" scale="1.0 1.0 1.0"/>
+                <mesh filename="./Starling2Max7040Prop.obj" scale="0.001 0.001 0.001"/>
             </geometry>
         </visual>
     </link>
-    <joint name="prop2_joint" type="fixed">
+    <joint name="prop2_joint">
         <parent link="base_link"/>
         <child link="prop2_link"/>
     </joint>
@@ -90,11 +90,11 @@
         <visual>
             <origin rpy="90.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
             <geometry>
-                <mesh filename="./Starling2Max7040Prop.obj" scale="1.0 1.0 1.0"/>
+                <mesh filename="./Starling2Max7040Prop.obj" scale="0.001 0.001 0.001"/>
             </geometry>
         </visual>
     </link>
-    <joint name="prop3_joint" type="fixed">
+    <joint name="prop3_joint">
         <parent link="base_link"/>
         <child link="prop3_link"/>
     </joint>
