@@ -15,9 +15,9 @@ SIZE_Y = 287 * MM_TO_M
 SIZE_Z = 129 * MM_TO_M
 
 PROP0 = scale_mm([94.96, 129.91, 24.06])
-PROP1 = scale_mm([94.96, 129.91, 24.06])
-PROP2 = scale_mm([94.96, 129.91, 24.06])
-PROP3 = scale_mm([94.96, 129.91, 24.06])
+PROP1 = scale_mm([94.96, -129.91, 24.06])
+PROP2 = scale_mm([-94.96, -129.91, 24.06])
+PROP3 = scale_mm([-94.96, 129.91, 24.06])
 
 def box_inertia(mass: float, size_x: float, size_y: float, size_z: float) -> tuple[float, float, float]:
     ixx = mass / 12.0 * (size_y**2 + size_z**2)
