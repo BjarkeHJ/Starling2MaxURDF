@@ -32,6 +32,21 @@ PROP1 = scale_mm([95.0, -130.0, 24.0])
 PROP2 = scale_mm([-95.0, -130.0, 24.0])
 PROP3 = scale_mm([-95.0, 130.0, 24.0])
 
+# Tether attachment points: equilateral triangle centered on base_link (xy),
+# 2 cm below base_link, 5 cm side length.
+ATTACH = True
+ATTACH_SIDE = 0.05 # [m]
+ATTACH_Z = -0.02 # [m]
+
+def attachment_points(side: float, z: float) -> list[str]:
+    r = side / math.sqrt(3)
+    return [
+        f"{round(r * math.cos(math.radians(angle)), 12)} {round(r * math.sin(math.radians(angle)), 12)} {z}"
+        for angle in (90, 210, 330)
+    ]
+
+ATTACH0, ATTACH1, ATTACH2 = attachment_points(ATTACH_SIDE, ATTACH_Z)
+
 def box_inertia(mass: float, size_x: float, size_y: float, size_z: float) -> tuple[float, float, float]:
     ixx = mass / 12.0 * (pow(size_y,2) + pow(size_z,2))
     iyy = mass / 12.0 * (pow(size_x,2) + pow(size_z,2))
@@ -77,6 +92,10 @@ def generate() -> str:
         prop1=PROP1,
         prop2=PROP2,
         prop3=PROP3,
+        attach=ATTACH,
+        attach0=ATTACH0,
+        attach1=ATTACH1,
+        attach2=ATTACH2,
     )
 
     with open(os.path.join(SCRIPT_DIR, "starling2max.urdf"), "w") as f:

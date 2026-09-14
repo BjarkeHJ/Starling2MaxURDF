@@ -40,12 +40,12 @@
 
     <link name="prop0_link">
         <inertial>
-            <origin rpy="0.0 0.0 0.0" xyz="0.09495999999999999 0.12991 0.024059999999999998"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.095 0.13 0.024"/>
             <mass value="0"/>
             <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
         </inertial>
         <visual>
-            <origin rpy="0.0 0.0 0.0" xyz="0.09495999999999999 0.12991 0.024059999999999998"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.095 0.13 0.024"/>
             <geometry>
                 <mesh filename="./Starling2Max7040Prop.obj" scale="0.001 0.001 0.001"/>
             </geometry>
@@ -59,12 +59,12 @@
 
     <link name="prop1_link">
         <inertial>
-            <origin rpy="0.0 0.0 0.0" xyz="0.09495999999999999 -0.12991 0.024059999999999998"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.095 -0.13 0.024"/>
             <mass value="0"/>
             <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
         </inertial>
         <visual>
-            <origin rpy="0.0 0.0 0.0" xyz="0.09495999999999999 -0.12991 0.024059999999999998"/>
+            <origin rpy="0.0 0.0 0.0" xyz="0.095 -0.13 0.024"/>
             <geometry>
                 <mesh filename="./Starling2Max7040Prop.obj" scale="0.001 0.001 0.001"/>
             </geometry>
@@ -78,12 +78,12 @@
 
     <link name="prop2_link">
         <inertial>
-            <origin rpy="0.0 0.0 0.0" xyz="-0.09495999999999999 -0.12991 0.024059999999999998"/>
+            <origin rpy="0.0 0.0 0.0" xyz="-0.095 -0.13 0.024"/>
             <mass value="0"/>
             <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
         </inertial>
         <visual>
-            <origin rpy="0.0 0.0 0.0" xyz="-0.09495999999999999 -0.12991 0.024059999999999998"/>
+            <origin rpy="0.0 0.0 0.0" xyz="-0.095 -0.13 0.024"/>
             <geometry>
                 <mesh filename="./Starling2Max7040Prop.obj" scale="0.001 0.001 0.001"/>
             </geometry>
@@ -97,12 +97,12 @@
 
     <link name="prop3_link">
         <inertial>
-            <origin rpy="0.0 0.0 0.0" xyz="-0.09495999999999999 0.12991 0.024059999999999998"/>
+            <origin rpy="0.0 0.0 0.0" xyz="-0.095 0.13 0.024"/>
             <mass value="0"/>
             <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
         </inertial>
         <visual>
-            <origin rpy="0.0 0.0 0.0" xyz="-0.09495999999999999 0.12991 0.024059999999999998"/>
+            <origin rpy="0.0 0.0 0.0" xyz="-0.095 0.13 0.024"/>
             <geometry>
                 <mesh filename="./Starling2Max7040Prop.obj" scale="0.001 0.001 0.001"/>
             </geometry>
@@ -113,5 +113,28 @@
         <parent link="base_link"/>
         <child link="prop3_link"/>
     </joint>
+
+
+    <link name="attach0_link"/>
+    <joint name="attach0_joint" type="fixed">
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.028867513459 -0.02"/>
+        <parent link="base_link"/>
+        <child link="attach0_link"/>
+    </joint>
+
+    <link name="attach1_link"/>
+    <joint name="attach1_joint" type="fixed">
+        <origin rpy="0.0 0.0 0.0" xyz="-0.025 -0.01443375673 -0.02"/>
+        <parent link="base_link"/>
+        <child link="attach1_link"/>
+    </joint>
+
+    <link name="attach2_link"/>
+    <joint name="attach2_joint" type="fixed">
+        <origin rpy="0.0 0.0 0.0" xyz="0.025 -0.01443375673 -0.02"/>
+        <parent link="base_link"/>
+        <child link="attach2_link"/>
+    </joint>
+
 
 </robot>

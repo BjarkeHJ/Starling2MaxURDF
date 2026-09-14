@@ -114,4 +114,27 @@
         <child link="prop3_link"/>
     </joint>
 
+{% if attach %}
+    <link name="attach0_link"/>
+    <joint name="attach0_joint" type="fixed">
+        <origin rpy="0.0 0.0 0.0" xyz="{{ attach0 }}"/>
+        <parent link="base_link"/>
+        <child link="attach0_link"/>
+    </joint>
+
+    <link name="attach1_link"/>
+    <joint name="attach1_joint" type="fixed">
+        <origin rpy="0.0 0.0 0.0" xyz="{{ attach1 }}"/>
+        <parent link="base_link"/>
+        <child link="attach1_link"/>
+    </joint>
+
+    <link name="attach2_link"/>
+    <joint name="attach2_joint" type="fixed">
+        <origin rpy="0.0 0.0 0.0" xyz="{{ attach2 }}"/>
+        <parent link="base_link"/>
+        <child link="attach2_link"/>
+    </joint>
+{% endif %}
+
 </robot>
