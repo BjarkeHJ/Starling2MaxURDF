@@ -42,7 +42,7 @@ def attachment_points(side: float, z: float) -> list[str]:
     r = side / math.sqrt(3)
     return [
         f"{round(r * math.cos(math.radians(angle)), 12)} {round(r * math.sin(math.radians(angle)), 12)} {z}"
-        for angle in (90, 210, 330)
+        for angle in (0, 120, 240)
     ]
 
 ATTACH0, ATTACH1, ATTACH2 = attachment_points(ATTACH_SIDE, ATTACH_Z)

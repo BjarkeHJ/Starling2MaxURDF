@@ -117,21 +117,21 @@
 
     <link name="attach0_link"/>
     <joint name="attach0_joint" type="fixed">
-        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.028867513459 -0.02"/>
+        <origin rpy="0.0 0.0 0.0" xyz="0.028867513459 0.0 -0.02"/>
         <parent link="base_link"/>
         <child link="attach0_link"/>
     </joint>
 
     <link name="attach1_link"/>
     <joint name="attach1_joint" type="fixed">
-        <origin rpy="0.0 0.0 0.0" xyz="-0.025 -0.01443375673 -0.02"/>
+        <origin rpy="0.0 0.0 0.0" xyz="-0.01443375673 0.025 -0.02"/>
         <parent link="base_link"/>
         <child link="attach1_link"/>
     </joint>
 
     <link name="attach2_link"/>
     <joint name="attach2_joint" type="fixed">
-        <origin rpy="0.0 0.0 0.0" xyz="0.025 -0.01443375673 -0.02"/>
+        <origin rpy="0.0 0.0 0.0" xyz="-0.01443375673 -0.025 -0.02"/>
         <parent link="base_link"/>
         <child link="attach2_link"/>
     </joint>
