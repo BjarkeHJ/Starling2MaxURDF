@@ -13,6 +13,9 @@
     <material name="red">
         <color rgba="0.8 0.0 0.0 1.0"/>
     </material>
+    <material name="grey">
+        <color rgba="0.1 0.1 0.1 1.0"/>
+    </material>
 
     <link name="base_link">
         <inertial>
@@ -25,6 +28,7 @@
             <geometry>
                 <mesh filename="./Starling2Max.obj" scale="0.001 0.001 0.001"/>
             </geometry>
+            <material name="grey"/>
         </visual>
         <collision>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
@@ -45,8 +49,8 @@
             <geometry>
                 <mesh filename="./Starling2Max7040Prop.obj" scale="0.001 0.001 0.001"/>
             </geometry>
-            <material name="green"/>
         </visual>
+        <material name="green"/>
     </link>
     <joint name="prop0_joint" type="fixed">
         <parent link="base_link"/>
@@ -102,8 +106,8 @@
             <geometry>
                 <mesh filename="./Starling2Max7040Prop.obj" scale="0.001 0.001 0.001"/>
             </geometry>
-            <material name="red"/>
         </visual>
+        <material name="red"/>
     </link>
     <joint name="prop3_joint" type="fixed">
         <parent link="base_link"/>
