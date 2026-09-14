@@ -49,8 +49,8 @@
             <geometry>
                 <mesh filename="./Starling2Max7040Prop.obj" scale="0.001 0.001 0.001"/>
             </geometry>
+            <material name="green"/>
         </visual>
-        <material name="green"/>
     </link>
     <joint name="prop0_joint" type="fixed">
         <parent link="base_link"/>
@@ -106,8 +106,8 @@
             <geometry>
                 <mesh filename="./Starling2Max7040Prop.obj" scale="0.001 0.001 0.001"/>
             </geometry>
+            <material name="red"/>
         </visual>
-        <material name="red"/>
     </link>
     <joint name="prop3_joint" type="fixed">
         <parent link="base_link"/>
