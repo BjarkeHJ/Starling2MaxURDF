@@ -26,11 +26,11 @@ SIZE_X = 217 * MM_TO_M
 SIZE_Y = 287 * MM_TO_M
 SIZE_Z = 129 * MM_TO_M
 
-# Motor shafts relative to mesh origin
-PROP0 = scale_mm([94.96, 129.91, 24.06])
-PROP1 = scale_mm([94.96, -129.91, 24.06])
-PROP2 = scale_mm([-94.96, -129.91, 24.06])
-PROP3 = scale_mm([-94.96, 129.91, 24.06])
+# Motor shafts relative to baselink (from datasheet - z is measured)
+PROP0 = scale_mm([95.0, 130.0, 24.0])
+PROP1 = scale_mm([95.0, -130.0, 24.0])
+PROP2 = scale_mm([-95.0, -130.0, 24.0])
+PROP3 = scale_mm([-95.0, 130.0, 24.0])
 
 def box_inertia(mass: float, size_x: float, size_y: float, size_z: float) -> tuple[float, float, float]:
     ixx = mass / 12.0 * (pow(size_y,2) + pow(size_z,2))
