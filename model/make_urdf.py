@@ -60,7 +60,6 @@ def generate() -> str:
     with open(os.path.join(SCRIPT_DIR, "starling2max.urdf.j2")) as f:
         template = jinja2.Template(f.read(), undefined=jinja2.StrictUndefined)
 
-
     urdf = template.render(
         kf=kf,
         km=km,
