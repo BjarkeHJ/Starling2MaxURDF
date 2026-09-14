@@ -7,6 +7,13 @@
         km="9.9e-09"
     />
 
+    <material name="green">
+        <color rgba="0.0 0.8 0.0 1.0"/>
+    </material>
+    <material name="red">
+        <color rgba="0.8 0.0 0.0 1.0"/>
+    </material>
+
     <link name="base_link">
         <inertial>
             <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
@@ -38,6 +45,7 @@
             <geometry>
                 <mesh filename="./Starling2Max7040Prop.obj" scale="0.001 0.001 0.001"/>
             </geometry>
+            <material name="green"/>
         </visual>
     </link>
     <joint name="prop0_joint" type="fixed">
@@ -56,6 +64,7 @@
             <geometry>
                 <mesh filename="./Starling2Max7040Prop.obj" scale="0.001 0.001 0.001"/>
             </geometry>
+            <material name="green"/>
         </visual>
     </link>
     <joint name="prop1_joint" type="fixed">
@@ -74,6 +83,7 @@
             <geometry>
                 <mesh filename="./Starling2Max7040Prop.obj" scale="0.001 0.001 0.001"/>
             </geometry>
+            <material name="red"/>
         </visual>
     </link>
     <joint name="prop2_joint" type="fixed">
@@ -92,6 +102,7 @@
             <geometry>
                 <mesh filename="./Starling2Max7040Prop.obj" scale="0.001 0.001 0.001"/>
             </geometry>
+            <material name="red"/>
         </visual>
     </link>
     <joint name="prop3_joint" type="fixed">
