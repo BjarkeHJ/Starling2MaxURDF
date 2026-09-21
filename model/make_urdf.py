@@ -16,8 +16,7 @@ NROT = 4
 KV = 1500
 VBAT_MAX = 16.8
 VBAT_NOM = 14.8
-T2W = 2.0
-PROP_RADISU = 0.09 # [m]
+T2W = 3.0
 RPM_MAX = KV * VBAT_MAX * 0.85
 
 # Measured Quantities
