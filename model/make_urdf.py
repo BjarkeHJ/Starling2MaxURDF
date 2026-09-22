@@ -11,13 +11,18 @@ def scale_mm(xyz: list[float]) -> str:
 
 # Datasheet
 MASS = 0.566
-MASS_W_PAYLOAD = 0.930 
+MAX_TAKEOFF_MASS = 0.930 
 NROT = 4
 KV = 1500
 VBAT_MAX = 16.8
 VBAT_NOM = 14.8
-T2W = 3.0
-RPM_MAX = KV * VBAT_MAX * 0.85
+T2W = 2.5  # rough target, not from datasheet - used only as a sanity check below
+PROP_RADIUS = 0.09 #[m]
+# Static thrust coefficient for a moderate-pitch 2-blade prop (~7x4 class).
+# Typical measured values for this prop class run ~0.09-0.13; 0.11 is a
+# mid-range estimate absent real thrust-stand/UIUC data for this specific prop.
+PROP_CT = 0.11
+RHO_AIR = 1.225  # kg/m^3
 
 # Measured Quantities
 # Drone BBOX
@@ -52,24 +57,38 @@ def box_inertia(mass: float, size_x: float, size_y: float, size_z: float) -> tup
     izz = mass / 12.0 * (pow(size_x,2) + pow(size_y,2))
     return ixx, iyy, izz
 
-def coefs(mass: float, nrot: int, rpm_max: float, thrust2weight: float) -> tuple[float, float]:
+def coefs(
+    mass: float, nrot: int, thrust2weight: float, prop_radius: float, prop_ct: float, rho: float
+) -> tuple[float, float]:
     g = 9.82
+
+    # T = kf * RPM² ; T = CT * rho * n² * D⁴  (n = RPM/60), so
+    # kf = CT * rho * D⁴ / 3600. Derived from prop aerodynamics rather than
+    # an assumed motor RPM derate, which is unreliable under heavy load.
+    prop_diameter = 2 * prop_radius
+    kf = prop_ct * rho * prop_diameter**4 / 3600.0
+
+    # Rough estimate absent measured propeller torque data: km/kf has units
+    # of length and is on the order of the propeller radius (cross-checked
+    # against CF2X reference values: km/kf = 0.0251 m vs its 0.0255 m prop radius).
+    km = kf * prop_radius
+
+    # Sanity check: RPM (and fraction of no-load KV*Vbat_max) needed to hit
+    # the target thrust-to-weight, for comparison against a plausible loaded derate.
     weight = mass * g
+    thrust_max_per_rotor = weight * thrust2weight / nrot
+    rpm_needed = math.sqrt(thrust_max_per_rotor / kf)
+    implied_derate = rpm_needed / (KV * VBAT_MAX)
+    print(
+        f"[coefs] kf={kf:.4e} km={km:.4e} -> rpm needed for T2W={thrust2weight}: "
+        f"{rpm_needed:.0f} rpm ({implied_derate:.0%} of KV*Vbat_max)"
+    )
 
-    # Maximum thrust required
-    thrust_max_total = weight * thrust2weight
-    thrust_max = thrust_max_total / nrot
-
-    # T = kf * RPM²
-    kf = thrust_max / rpm_max**2
-
-    # TODO: derive from propeller torque data
-    km = 9.9e-9
     return kf, km
 
 def generate() -> str:
     ixx, iyy, izz = box_inertia(MASS, SIZE_X, SIZE_Y, SIZE_Z)
-    kf, km = coefs(MASS, NROT, RPM_MAX, T2W)
+    kf, km = coefs(MASS, NROT, T2W, PROP_RADIUS, PROP_CT, RHO_AIR)
 
     with open(os.path.join(SCRIPT_DIR, "starling2max.urdf.j2")) as f:
         template = jinja2.Template(f.read(), undefined=jinja2.StrictUndefined)

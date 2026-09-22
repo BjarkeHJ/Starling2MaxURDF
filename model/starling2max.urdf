@@ -3,8 +3,8 @@
 <robot name="starling2max">
 
     <properties
-        kf="9.085529636691279e-09"
-        km="9.9e-09"
+        kf="3.929309999999999e-08"
+        km="3.536378999999999e-09"
     />
 
     <material name="green">
