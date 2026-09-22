@@ -17,8 +17,8 @@ KV = 1500
 VBAT_MAX = 16.8
 VBAT_NOM = 14.8
 T2W = 2.5  # rough target, not from datasheet - used only as a sanity check below
-PROP_RADIUS = 0.09 #[m]
-# Static thrust coefficient for a moderate-pitch 2-blade prop (~7x4 class).
+PROP_RADIUS = 0.09 #[m] (180mm diameter, tri-blade)
+# Static thrust coefficient for a moderate-pitch tri-blade 180mm prop.
 # Typical measured values for this prop class run ~0.09-0.13; 0.11 is a
 # mid-range estimate absent real thrust-stand/UIUC data for this specific prop.
 PROP_CT = 0.11
